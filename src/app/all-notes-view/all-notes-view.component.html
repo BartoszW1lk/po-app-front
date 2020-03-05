@@ -1,0 +1,22 @@
+<h1 style="max-width: 500px;
+  margin: auto;
+text-align: center;">
+  Przeglądaj notatki
+</h1>
+<div id="container_for_notes">
+    <ul class="notes">
+      <li *ngFor="let notatka of notatki">
+        <div id="wrapper">
+          <div id="first">
+            <img src="assets/delete.png" id="button_delete_note" alt="delete" (click)="deleteNote(notatka)" style="width: 20px; height: 20px">
+          </div>
+          <div id="second">
+            <div id="note_view" (click)="showNote(notatka)" routerLink="/note-view">
+              {{notatka.nazwa}}<br>
+              Opis: {{notatka.opis}}
+            </div><br>
+          </div>
+        </div>
+      </li>
+    </ul>
+</div>

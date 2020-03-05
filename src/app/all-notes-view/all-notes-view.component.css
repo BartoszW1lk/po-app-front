@@ -1,0 +1,65 @@
+#button_delete_note{
+  width: 10px;
+  height: 10px;
+}
+
+#button_add_note{
+  position: relative;
+  left: -170px;
+  width: 100px;
+  height: 40px;
+}
+
+#button_delete{
+  position: relative;
+  left: -150px;
+
+  width: 100px;
+  height: 40px;
+}
+
+#container_for_buttons{
+  display: flex;
+  /*flex-direction: column;*/
+  justify-content: center;
+  align-items: center;
+  /*text-align: center;*/
+  min-height: 60px;
+  min-width: 600px;
+}
+
+
+
+li {
+  list-style-type: none;
+}
+
+#note_view{
+  border-style: solid;
+  padding: 8px;
+  width: 500px;
+}
+
+
+
+#container_for_notes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#wrapper {
+  /*width: 500px;*/
+  /*border: 1px solid black;*/
+  overflow: hidden; /* will contain if #first is longer than #second */
+}
+#first {
+  /*width: 300px;*/
+  float:left; /* add this */
+  /*border: 1px solid red;*/
+}
+#second {
+  /*border: 1px solid green;*/
+  overflow: hidden; /* if you don't want #second to wrap below #first */
+}

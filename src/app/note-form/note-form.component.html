@@ -1,0 +1,73 @@
+<div id="note_form_container" style="padding: 20px 0px 0px 400px;text-align: left; font-size: 20px">
+
+  <div  id="container_for_note_1" [hidden]="noteFormDiv">
+    nazwa: <input [(ngModel)]="nazwa" value='{{noteInitial?.nazwa}}' (ngModelChange)="noteChange()"><br>
+    opis: <input [(ngModel)]="opis" value="{{noteInitial?.opis}}" (ngModelChange)="noteChange()"><br>
+    <div (click)="selectKurs()">kurs: {{kursTitle}}<br></div>
+    <div (click)="selectProwadzacy()">prowadzacy: {{prowadzacyName}}<br></div>
+    <div (click)="selectUczelnia()">uczelnia: {{uczelniaName}}<br></div>
+    pliki:
+    <div>
+    <ul class="files">
+      <li *ngFor="let plik of this.listOfPlik" (click)="getFile(plik.id)">
+        {{plik.nazwa}}
+      </li>
+    </ul>
+      <div>
+        <input type="file" id="customFile" (change)="selectFile($event)"><br>
+      </div>
+    </div>
+    ocena: <select [(ngModel)]="ocena" (ngModelChange)="noteChange()">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  </div>
+
+  <div [hidden]="kursSelectDiv" style="font-size: 15px; height: 200px; overflow: auto">
+    <ul class="courses">
+      <li *ngFor="let kurs of kursContainer.getListOfKurs()" >
+        <div class="detailsView" (click)="selectedKurs(kurs)">
+          Nazwa kursu: {{kurs.nazwa}}<br>
+          Rodzaj kursu: {{kurs.rodzajKursu}}
+        </div>
+        <br>
+      </li>
+    </ul>
+    <button (click)="endSelect()">Anuluj</button><br>
+  </div>
+
+  <div [hidden]="prowadzacySelectDiv" style="font-size: 15px; height: 200px; overflow: auto">
+    <ul class="teachers">
+      <li *ngFor="let prowadzacy of prowadzacyContainer.getListOfProwadzacy()" >
+        <div class="detailsView" (click)="selectedProwadzacy(prowadzacy)">
+          Imię i nazwisko prowadzącego: {{prowadzacy.imie}} {{prowadzacy.nazwisko}}<br>
+          Stopień naukowy: {{prowadzacy.tytulNaukowy}}
+        </div>
+        <br>
+      </li>
+    </ul>
+    <button (click)="endSelect()">Anuluj</button><br>
+  </div>
+
+  <div [hidden]="uczelniaSelectDiv" style="font-size: 15px; height: 200px; overflow: auto">
+    <ul class="colleges" >
+      <li *ngFor="let uczelnia of uczelniaContainer.getListOfUczelnia()" >
+        <div class="detailsView" (click)="selectedUczelnia(uczelnia)">
+          Nazwa uczelni: {{uczelnia.nazwa}}<br>
+          Adres: {{uczelnia.adres}}
+        </div>
+        <br>
+      </li>
+    </ul>
+    <button (click)="endSelect()">Anuluj</button><br>
+  </div>
+
+  <div [hidden]="plikSelectDiv" style="font-size: 15px; height: 200px; overflow: auto">
+<!--    <input type="file" id="customFile" (change)="selectFile($event)"><br>-->
+    <button (click)="endSelect()">Zakończ edytowanie plików</button><br>
+  </div>
+</div>
+

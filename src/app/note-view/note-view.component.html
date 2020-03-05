@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<div *ngIf="note==null; then note_blank; else note_view"></div>-->
+
+<!--<ng-template #note_blank ></ng-template>-->
+
+<!--<ng-template #note_view>-->
+
+<!--</ng-template>-->
+
+<div  id="container_for_note_1" style="padding-top: 20px">
+  <fieldset id="container_for_note_2">
+    <legend>{{note.nazwa}}<br></legend>
+    opis: {{note.opis}}<br>
+    kurs: {{kursTitle}}<br>
+    prowadzacy: {{prowadzacyName}}<br>
+    uczelnia: {{uczelniaName}}<br>
+
+    pliki: <ul class="files">
+        <li *ngFor="let plik of listOfPlik" (click)="getFile(plik.id)">
+          {{plik.nazwa}}
+        </li>
+      </ul>
+
+    <span id="star1"></span>
+    <span id="star2"></span>
+    <span id="star3"></span>
+    <span id="star4"></span>
+    <span id="star5"></span>
+
+
+
+  </fieldset><br>
+
+
+
+</div>
+
+<div id="container_for_buttons_note_view" style="padding: 0px 450px 20px 20px;text-align: right">
+  <br>
+  <button id="edit_button" (click)="edit()" routerLink="/note-edit">Edytuj</button>
+  <button id="delete_button" (click)="deleteNote()" routerLink="/all-notes-view" >Usuń</button>
+</div>
+
+

@@ -1,0 +1,8 @@
+<h1 style="max-width: 500px;
+margin: auto;
+text-align: center;">Dodaj nową notatkę</h1>
+<app-note-form (eventEmitter)="noteChange($event)"></app-note-form>
+<div id="container_for_buttons" style="padding: 0px 450px 20px 20px;text-align: right">
+  <button id="zatwierdz_button" (click)="saveNote()" routerLink="/all-notes-view">Zatwierdź</button>
+  <button id="anuluj_button" routerLink="/all-notes-view">Anuluj</button>
+</div>

@@ -1,0 +1,8 @@
+#note_form_container{
+  height: 250px;
+}
+.detailsView{
+  border-style: solid;
+  padding: 5px;
+  width: 400px;
+}

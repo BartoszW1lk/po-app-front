@@ -1,0 +1,34 @@
+#container_for_note_1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container_for_note_2{
+  border-style: solid;
+  padding: 10px;
+  min-width: 400px;
+  min-height: 200px;
+}
+input{
+  padding: 5px;
+}
+
+#anuluj_button{
+  position: relative;
+  left: 15px;
+}
+
+#zatwierdz_button{
+  position: relative;
+  left: 10px;
+}
+
+/*#container_for_buttons_note_view{*/
+/*  position: relative;*/
+/*  top: 90px;*/
+/*}*/
+
+.checked {
+  color: orange;
+}
